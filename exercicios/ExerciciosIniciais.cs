@@ -11,6 +11,8 @@ namespace exercicios
         //Área de variaveis ->globais
         private int num1;
         private int num2;
+        private int num;
+        private int result;
 
         public ExerciciosIniciais() { }
         public ExerciciosIniciais(int num1,int num2) 
@@ -43,6 +45,76 @@ namespace exercicios
             }//fim if
             return -1;
         }//fim media
+
+        public string verificador(int num)
+        {
+            if(num < 0)
+            {
+                return "O número é negativo";
+            }else if(num > 0)
+            {
+                return "O número é positivo";
+            }else
+            {
+                return "O número é zero!";
+            }
+        }
+
+        public string tabuada(int num)
+        {
+            string result = "";
+            for(int i = 1; i < 11; i++)
+            {
+                result += (i + " * " + num + " = " + (num * i)+"\n");
+            }
+            return result;
+        }
+        public int fatorial(int num)
+        {
+            int result = 1;
+            for (int i = (num-1); i > 0; i--)
+            {
+                if (i == num)
+                {
+                    result += (i * num);
+                }
+                result += result*i;
+            }
+            return result;
+        }
+
+        public double potencia(double num, double num2)
+        {
+            double result = 1;
+            for (int i = 0; i <= num2; i++)
+            {
+                result = (long)Math.Pow(num, num2);
+            }
+            return result;
+        }
+        public double raiz(double num)
+        {
+            return (Math.Sqrt(num));
+        }
+
+        public string parOuImpar(int num)
+        {
+            if((num%2) == 0)
+            {
+                return "O número é par";
+            }
+            else
+            {
+                return "O número é impar";
+            }
+        }
+
+        public string ordem(int num1, int num2)
+        {
+            result = [result, num1, num2];
+            return OrderBy(result).list();
+        }
+
 
 
     }//fim classe
