@@ -111,8 +111,68 @@ namespace exercicios
 
         public string ordem(int num1, int num2)
         {
-            result = [result, num1, num2];
-            return OrderBy(result).list();
+            int[] result = { num1,num2 };
+
+            Array.Sort(result);
+            string resultado = "";
+            foreach (int i in result)
+            {
+                resultado += i+"\n";
+            }
+            return resultado;
+        }
+
+        public string mediaTotal(int[] vet)
+        {
+            return "A média de todos os números é " + (vet.Sum()/(vet.Length));
+        }
+
+        public string vogais(string palavra)
+        {
+            int tamanho = palavra.Length;
+            int contador = 0;
+            for (int i = 0; i < tamanho; i++)
+            {
+                if ((palavra.Substring(i, 1) == "a") ||
+                    (palavra.Substring(i, 1) == "A") ||
+                    (palavra.Substring(i, 1) == "e") ||
+                    (palavra.Substring(i, 1) == "E") ||
+                    (palavra.Substring(i, 1) == "i") ||
+                    (palavra.Substring(i, 1) == "I") ||
+                    (palavra.Substring(i, 1) == "o") ||
+                    (palavra.Substring(i, 1) == "O") ||
+                    (palavra.Substring(i, 1) == "u") ||
+                    (palavra.Substring(i, 1) == "U"))
+                {
+                    contador++;
+                }
+            }
+            return "A palavra " + palavra + " tem " + contador + " vogais";
+        }
+
+        public string inverter(string palavra)
+        {
+            string textoInvertido = new string(palavra.Reverse().ToArray());
+
+            return textoInvertido;
+
+        }
+
+        public string VerificaNumeroPrimo(int num)
+        {
+            int cont = 0;
+            for (int i = 1; i < num; i++)
+            {
+                if (num % i == 0)
+                {
+                    cont = cont + 1;
+                }
+            }
+
+            if ((cont > 2) || (num == 4))
+                return "O número " + num + " NÃO É primo";
+            else
+                return "O número " + num + " É primo";
         }
 
 

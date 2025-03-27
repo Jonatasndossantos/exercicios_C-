@@ -28,6 +28,11 @@ namespace exercicios
                               "\n5. Cálculo do fatorial de um número" +
                               "\n6. Operações matemáticas: Potencia ou Raiz" +
                               "\n7. Verificar se um número é par ou ímpar" +
+                              "\n8. Dois números em ordem crescente" +
+                              "\n9. Média de uma lista de números" +
+                              "\n10. Contar o número de vogais" +
+                              "\n11. Inverter a palavra" +
+                              "\n12. Verifique se um número é primo" +
                               "\nfim");
 
             
@@ -149,6 +154,41 @@ namespace exercicios
                         num2 = Convert.ToInt32(Console.ReadLine());
 
                         Console.WriteLine(this.exer.ordem(num1,num2));
+
+                        break;
+                    case 9:
+                            Console.Write("Informe uma quantidade: ");
+                            int quan = 0;
+                            quan = Convert.ToInt32(Console.ReadLine());
+
+                            int[] vet = new int[quan];
+                            for (int i = 0; i < (vet.Length); i++)
+                            {
+                                Console.Write("Informe o " + (i + 1) + "º número: ");
+                                num = Convert.ToInt32(Console.ReadLine());
+                                
+                                vet[i] = num;
+                            }
+                            Console.WriteLine(this.exer.mediaTotal(vet));
+                        break;
+                    case 10:
+
+                        Console.Write("Informe uma palavra: ");
+                        string palavra = Console.ReadLine();
+
+                        Console.WriteLine(this.exer.vogais(palavra));
+
+                        break;
+                    case 11:
+                        Console.Write("Informe uma palavra: ");
+                        palavra = Console.ReadLine();
+
+                        Console.WriteLine(this.exer.inverter(palavra));
+                        break;
+                    case 12:
+                        Console.Write("Informe um número: ");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.exer.VerificaNumeroPrimo(num));
 
                         break;
 
